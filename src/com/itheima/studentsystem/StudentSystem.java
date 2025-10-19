@@ -24,7 +24,7 @@ public class StudentSystem {
             switch (choose) {
                 case "1":
                     System.out.println("添加学生");
-                    students.add(addstudednt());
+                    students.add(addstudednt(students));
                     break;
                 case "2":
                     System.out.println("删除学生");
@@ -56,10 +56,11 @@ public class StudentSystem {
 
     /// ----------------------------------------------------------------------------------
     //添加学生的方法
-    public static Student addstudednt() {
+    public static Student addstudednt(ArrayList<Student> students) {
         Scanner sc = new Scanner(System.in);
         Student stu = new Student();
         //添加编号
+        /*
         while (true) {
             System.out.println("--------------------------------------------");
             System.out.println("请输入要添加的学生编号");
@@ -71,6 +72,9 @@ public class StudentSystem {
                 System.out.println("无效数据，请重新输入");
             }
         }
+         */
+        int id = students.size()+1;
+        stu.setId(id);
         //添加姓名
         System.out.println("请输入要添加的学生姓名");
         String name = sc.next();
